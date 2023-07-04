@@ -1,11 +1,17 @@
 ﻿namespace DesignPatterns.Specification;
 
-public interface ISpecification
+public interface ISpecification<T>
 {
-	bool IsSatisfiedBy(object candidate);
-	ISpecification And(ISpecification other);
-	ISpecification AndNot(ISpecification other);
-	ISpecification Or(ISpecification other);
-	ISpecification OrNot(ISpecification other);
-	ISpecification Not();
+	bool IsSatisfiedBy(T candidate);
+
+	ISpecification<T> And(ISpecification<T> other);
+
+	ISpecification<T> AndNot(ISpecification<T> other);
+
+	ISpecification<T> Or(ISpecification<T> other);
+
+	ISpecification<T> OrNot(ISpecification<T> other);
+
+	ISpecification<T> Not();
 }
+
