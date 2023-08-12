@@ -1,6 +1,7 @@
 ﻿
 using Adapter;
 using Adapter.Adapter;
+using Adapter.Transport;
 
 List<VectorObject> vectorObjects
 	  = new List<VectorObject>
@@ -35,5 +36,11 @@ void Draw()
 
 Draw();
 
-var text = new StreamReader("D:\\proga\\proga.txt");
-Console.WriteLine(text.ReadLine());
+// __________________________________________________________
+
+ITransport car = new Car();
+car.Drive();
+ITransport camel = new CamelTransAdapter();
+camel.Drive();
+
+
