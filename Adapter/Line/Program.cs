@@ -33,4 +33,7 @@ void Draw()
 	}
 }
 
-Draw(); 
+Draw();
+
+var text = new StreamReader("D:\\proga\\proga.txt");
+Console.WriteLine(text.ReadLine());

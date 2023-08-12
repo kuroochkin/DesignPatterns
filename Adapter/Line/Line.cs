@@ -1,4 +1,6 @@
-﻿namespace Adapter;
+﻿using System.Runtime.CompilerServices;
+
+namespace Adapter;
 
 public class Line
 {
@@ -11,9 +13,10 @@ public class Line
 	}
 
 	protected bool Equals(Line other)
-	{
+	{ 
 		return Equals(Start, other.Start) && Equals(End, other.End);
 	}
+
 
 	public override bool Equals(object obj)
 	{
