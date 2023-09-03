@@ -1,12 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
-namespace _Decorator
+namespace _Decorator;
+
+//Декоратор логирования
+public class PostServiceLoggingDecorator : PostServiceDecorator
 {
-	internal class PostServiceLoggingDecorator
+	public PostServiceLoggingDecorator(IPostService postService)
+		: base(postService) { }
+
+	public async override Task<Post?> GetPost(int postId)
 	{
+		Console.WriteLine($"Обращение к API для получения поста с ID: {postId}");
+		var stopwatch = Stopwatch.StartNew();
+		try
+		{
+
+			var post = await postService.GetPost(postId);
+			Console.WriteLine($"Вызов API занял: {stopwatch.ElapsedMilliseconds} ms");
+			return post;
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"GetPostAsync threw exception: {ex.Message}");
+			throw;
+		}
+		finally
+		{
+			stopwatch.Stop();
+		}
 	}
 }
