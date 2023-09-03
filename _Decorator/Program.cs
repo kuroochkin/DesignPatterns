@@ -4,9 +4,14 @@ public class Program
 {
 	public static async Task Main(string[] args)
 	{
-		IPostService postService = new PostService();
-		var postServiceLogging = new PostServiceLoggingDecorator(postService);
-		var postServiceCache = new PostServiceCacheDecorator(postServiceLogging);
+		var postServiceCache = new PostServiceCacheDecorator(
+			new PostServiceLoggingDecorator(
+				new PostService()));
+		
+		//IPostService postService = new PostService();
+		//var postServiceLogging = new PostServiceLoggingDecorator(postService);
+		
+		//var postServiceCache = new PostServiceCacheDecorator(postServiceLogging);
 		try
 		{
 			//Поста еще нет в кеше
