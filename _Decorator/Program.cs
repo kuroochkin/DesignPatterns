@@ -10,7 +10,6 @@ public class Program
 		
 		//IPostService postService = new PostService();
 		//var postServiceLogging = new PostServiceLoggingDecorator(postService);
-		
 		//var postServiceCache = new PostServiceCacheDecorator(postServiceLogging);
 		try
 		{

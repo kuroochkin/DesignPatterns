@@ -28,7 +28,7 @@ public class PostService : IPostService
 		}
 		else
 		{
-			throw new Exception($"Error: {response.StatusCode}");
+			throw new Exception($"Ошибка: {response.StatusCode}");
 		}
 	}
 }

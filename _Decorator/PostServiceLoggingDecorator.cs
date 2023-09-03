@@ -21,7 +21,7 @@ public class PostServiceLoggingDecorator : PostServiceDecorator
 		}
 		catch (Exception ex)
 		{
-			Console.WriteLine($"GetPostAsync threw exception: {ex.Message}");
+			Console.WriteLine($"Ошибка: {ex.Message}");
 			throw;
 		}
 		finally
