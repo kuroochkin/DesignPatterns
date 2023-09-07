@@ -25,6 +25,6 @@ public class University : Education
 
 	public override void GetDocument()
 	{
-        Console.WriteLine("Поулчаем диплом");
+        Console.WriteLine("Получаем диплом");
     }
 }
