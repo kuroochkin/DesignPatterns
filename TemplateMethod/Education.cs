@@ -2,10 +2,10 @@
 
 public abstract class Education
 {
-	public virtual void Enter() { }
-	public virtual void Study() { }
-	public virtual void PassExams() { }
-	public virtual void GetDocument() { }
+	public abstract void Enter();
+	public abstract void Study();
+	public virtual void PassExams() { Console.WriteLine("Сдаем выпускные экзамены"); }
+	public abstract void GetDocument();
 
 	public void Learn()
 	{
