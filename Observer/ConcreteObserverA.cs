@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Observer;
 
-namespace Observer
+public class ConcreteObserverA : IObserver
 {
-	internal class ConcreteObserverA
+	public void Update(ISubject subject)
 	{
+		if ((subject as Subject).State < 3)
+		{
+			Console.WriteLine("ConcreteObserverA: Спасибо, это важная для меня информация.");
+		}
 	}
 }

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Observer;
 
-namespace Observer
+public interface IObserver
 {
-	internal interface IObserver
-	{
-	}
+	void Update(ISubject subject);
 }
