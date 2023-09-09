@@ -15,4 +15,6 @@ public abstract class Colleague
 	}
 
 	public abstract void Notify(string message);
+
+	IObserver
 }
