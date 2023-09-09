@@ -1,4 +1,4 @@
-﻿using Observer;
+﻿using Observer.Example;
 
 var subject = new Subject();
 var observerA = new ConcreteObserverA();
@@ -12,3 +12,4 @@ subject.SomeBusinessLogic();
 subject.Detach(observerB);
 
 subject.SomeBusinessLogic();
+
